@@ -1,0 +1,23 @@
+docker images
+
+docker ps 
+
+docker ps -a 
+
+docker rm <id> 
+
+docker system prune 
+
+docker build -t <name> <directory>
+
+docker run -d -p <port to map>:<port to be mapped> <name>
+
+docker stop name 
+
+docker port <name>
+
+docker run --rm <name> # to delete as soon it is stopped
+
+docker network create <name>
+
+docker run -d --name <name to give> --net <name of network> -p <port to map of network>:<port to be mapped of network> -p <port to map>:<port to be mapped> <name>
