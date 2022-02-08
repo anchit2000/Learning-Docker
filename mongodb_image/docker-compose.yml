@@ -1,0 +1,18 @@
+
+version: '3.1'
+
+services:
+
+  jupy_mongo:
+    image: jupyter
+    restart: always
+    networks:
+      - default
+      - mongo_jupyter_integration
+    volumes:
+      - ./data_:/home/
+
+networks:
+  mongo_jupyter_integration:
+    driver: bridge
+    external: True
