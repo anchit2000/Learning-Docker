@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  jupyter-test:
+    image: jupyter
+    ports: 
+      - 8888:8888
+    volumes:
+      - jupyter:/home/
+volumes:
+  jupyter:
