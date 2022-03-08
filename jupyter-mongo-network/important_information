@@ -1,0 +1,6 @@
+5000:8888 means 5000 of local and 8888 of the container
+here I have added these to mongo_connect with driver bridge so that they can contact each other
+we can do sudo docker network inspect mongo_connect, even if we dont give a separate network they will be in same network because of same mongo-compose file
+we can then check the ip where our service is hosted
+But while connecting to mongo from the notebook server we have to give host={ip where the service is on the network}" port = {27017} because we are mapping 27017 to 8080 on our local but in container it is still runnning on 27017
+for example client = MongoClient(host = 172.27.0.3,port=27017)

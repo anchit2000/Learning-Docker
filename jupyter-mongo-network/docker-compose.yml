@@ -1,0 +1,28 @@
+version : "3.3"
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: dockerfilejupyter
+    ports:
+      - "5000:8888"
+    volumes:
+      - /home/Desktop/Study/Learning-Docker/jupyter-mongo-network/jupyter:/home/jupyter
+    restart: always
+    networks:
+      - mongo_connect
+
+  mongo_db:
+    image: mongo 
+    ports:
+      - "8080:27017"
+    volumes:
+      - /home/Desktop/Study/Learning-Docker/jupyter-mongo-network/mongo:/home/mongo
+    restart: always
+    networks:
+      - mongo_connect
+
+
+networks:
+  mongo_connect:
+    driver : bridge
